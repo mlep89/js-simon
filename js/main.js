@@ -21,19 +21,15 @@ setTimeout(function() {
         else {
           userNum.push(askNum);
         }
+        // il software dice quanti e quali numeri sono stati ricordati.
+
+        var ricordati = [];
+
+        for (i = 0; i < userNum.length; i++) {
+           if (totNum.includes(userNum[i]));
+           ricordati.push(userNum[i]);
+        }
+
+        alert("Ti sei ricordato" + ricordati.length + " numeri. I numeri che ti sei ricordato sono: " + ricordati);
     }
 } , 3 * 1000);
-
-// il software dice quanti e quali numeri sono stati ricordati.
-var quali = [];
-for (i = 0; i < userNum.length; i++) {
-    if (userNum.includes(totNum[i])) {
-        quali.push(userNum);
-    }
-}
-
-
-/*for (i = 0; i < totNum.length; i++) {
-    var quanti = totNum.includes(userNum.length);
-}
-console.log(quanti);*/
