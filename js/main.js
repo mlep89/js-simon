@@ -12,7 +12,15 @@ alert("Ricorda bene. I numeri da ricordare sono " + totNum);
 setTimeout(function() {
     /*Dopo 30 secondi l’utente deve inserire, un prompt alla volta, 
     i numeri che ha visto precedentemente.*/
-    for (i = 0; i < 5; i++) {
+    
+    while (userNum.length < 5) {
+        var askNum = parseInt(prompt("Inserisci un numero"));
+
+        if (userNum.includes(askNum) == false) {
+            userNum.push(askNum);
+        }
+    }
+    /*for (i = 0; i < 5; i++) {
        askNum = parseInt(prompt("Inserisci il primo numero"));
         if (Number.isNaN(askNum)) {
           alert("Non hai inserito un numero");
@@ -20,7 +28,7 @@ setTimeout(function() {
         }
         else {
           userNum.push(askNum);
-        }
+        }*/
         // il software dice quanti e quali numeri sono stati ricordati.
 
         var ricordati = [];
@@ -30,6 +38,6 @@ setTimeout(function() {
            ricordati.push(userNum[i]);
         }
 
-        alert("Ti sei ricordato" + ricordati.length + " numeri. I numeri che ti sei ricordato sono: " + ricordati);
-    }
+        alert("Ti sei ricordato " + ricordati.length + " numeri. I numeri che ti sei ricordato sono: " + ricordati);
+
 } , 3 * 1000);
